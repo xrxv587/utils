@@ -1,5 +1,5 @@
 /**
-* canvas画饼形图
+* canvas画饼形图 
 */
 export default class CircleChart {
   /**
