@@ -2,6 +2,13 @@
 * canvas画饼形图
 */
 export default class CircleChart {
+  /**
+   * @param {String} target canvas id
+   * @param {number} width width
+   * @param {number} height height
+   * @param {Array} data 饼形图各项目所占百分比 element总数和为1
+   * @param {String} tips 各项说明 与data一一对应
+   */
   constructor(target, width, height, data = [], tips = null) {
     const CANVAS = document.getElementById(target);
     CANVAS.width = width;
