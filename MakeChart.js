@@ -1,3 +1,6 @@
+/**
+* canvas画饼形图
+*/
 export default class CircleChart {
   constructor(target, width, height, data = [], tips = null) {
     const CANVAS = document.getElementById(target);
