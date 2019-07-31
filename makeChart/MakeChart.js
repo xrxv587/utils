@@ -39,6 +39,10 @@ class CircleChart {
     let color = `#${r}${g}${b}`;
     return color;
   }
+  /**
+   * 
+   * @param {number} length 需要生成颜色的个数
+   */
   makeColorArr(length = 0) {
     // 将随机颜色根据length长度装入数组并去重,避免生成重复颜色
     for (let i = 0; i < length; i++) {
@@ -68,6 +72,7 @@ class CircleChart {
       this.ctx.fill();
       start = start + item;
     });
+    // 画内部圆心
     this.ctx.beginPath();
     this.ctx.fillStyle = 'white';
     this.ctx.moveTo(this.half_width, this.half_height);
@@ -82,6 +87,7 @@ class CircleChart {
     this.ctx.closePath();
     this.ctx.restore();
   }
+  // 工具函数 转换角度为弧度
   getRads(degrees) {
     return (Math.PI * degrees) / 180;
   }
