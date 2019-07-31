@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script src="./promise1.js"></script>
+<script>
+  a = (num) => {
+    return new Promise1((resolve, reject) => {
+      if (num === 1) {
+        resolve('正确', num);
+      } else {
+        reject('错误');
+      }
+    });
+  }
+  a(1).then(value => {
+    console.log('value is ', value);
+  }).catch(err => {
+    console.error('error is ', err);
+  });
+</script>
+</html>
