@@ -1,7 +1,7 @@
 /**
 * canvas画饼形图
 */
-export default class CircleChart {
+class CircleChart {
   /**
    * @param {String} target canvas id
    * @param {number} width width
