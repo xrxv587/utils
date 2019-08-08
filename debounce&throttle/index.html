@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数防抖与节流</title>
+</head>
+<body>
+    <button id="debounce">debounce</button>
+    <button id="throttle">throttle</button>
+</body>
+<script src="./index.js"></script>
+<script>
+    const debounceButton = document.querySelector('#debounce');
+    const throttleButton = document.querySelector('#throttle');
+
+    debounceButton.onclick = debounce(function(e) {
+        console.log('执行啦');
+    }, 1000);
+
+    const AWAIT_TIME = 3000;
+    throttleButton.onclick = throttle(function(e) {
+        // 模拟api请求 1s 后返回数据
+        setTimeout(() => {
+            console.log('接收到res');
+        }, 1000);
+        let count = AWAIT_TIME / 1000;
+        let timeId = setInterval(() => {
+            if (count > 0) {
+                throttleButton.innerHTML = count;
+                count--;
+            } else {
+                count = AWAIT_TIME / 1000;
+                clearInterval(timeId);
+                throttleButton.innerHTML = 'throttle';
+            }
+        }, 1000);
+    }, 3000);
+</script>
+</html>
